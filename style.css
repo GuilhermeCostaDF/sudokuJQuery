@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     background-color: #f2f7f5;
     font-family: 'Courier New', Courier, monospace;
 }
 
-header{
+header {
     width: 100%;
 }
 
-nav{
+nav {
     max-width: 50%;
     margin: 0 auto;
     padding: 20px;
@@ -18,7 +18,7 @@ nav{
     align-items: center;
 }
 
-.botaoHeader{
+.botaoHeader {
     list-style: none;
     padding: 12px 16px;
     background-color: #faae2b;
@@ -27,32 +27,68 @@ nav{
     font-weight: bold;
 }
 
-.botaoHeader:hover{
+.botaoHeader:hover {
     cursor: pointer;
 }
 
-div{
+div {
     display: block;
     margin: 0 auto;
     padding: 10px;
-    max-width: 80%;
+    max-width: 90%;
     margin-top: 30px;
 }
 
-h1{
+h1 {
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
-p{
+p {
     text-align: left;
     line-height: 1.2;
     padding: 10px;
 }
 
-ul{
+ul {
     padding: 30px;
 }
 
-li{
+li {
     padding: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#imgContainer {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#socialMediaBtns {
+    right: -55px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnMedia{
+    margin-left: 10px;
+}
+
+h3{
+    margin: 20px 0 10px 0;
+}
+
+#techsIuse{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
