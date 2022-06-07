@@ -3,7 +3,6 @@ $('document').ready(
     function(){
 
         $('a').on('click', function(e){
-            console.log($(this)[0].id)
 
             switch($(this)[0].id){
                 case 'pgSobre':
