@@ -92,3 +92,10 @@ h3{
     text-align: center;
     margin-top: 20px;
 }
+
+
+#divSobre{
+    box-sizing: border-box;
+    display: block;
+}
+
