@@ -5,23 +5,35 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+header img{
+    position: relative;
+    width: 150px;
+}
+
 header {
-    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
 }
 
 nav {
-    max-width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a{
+    font-size: 18px;
+    margin-left: 15px;
 }
 
 .botaoHeader {
     list-style: none;
     padding: 12px 16px;
-    background-color: #faae2b;
+    /* background-color: #faae2b; */
     border-radius: 5px;
     color: #00473e;
     font-weight: bold;
@@ -97,5 +109,9 @@ h3{
 #divSobre{
     box-sizing: border-box;
     display: block;
+}
+
+#divSobre a{
+    color: #fa5246;
 }
 

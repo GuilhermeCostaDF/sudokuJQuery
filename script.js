@@ -3,7 +3,7 @@ $('document').ready(
     function(){
 
         $('a').on('click', function(e){
-
+            
             switch($(this)[0].id){
                 case 'pgSobre':
                     $('#divSobre')[0].style = "display: block;"
@@ -25,7 +25,6 @@ $('document').ready(
             }
 
         })
-
 
     }
 
