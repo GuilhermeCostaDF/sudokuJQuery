@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="/logo.png" alt="" id="logo">
+        <img src="./logo.png" alt="" id="logo">
         <nav>
             <a id="pgJogar" class="botaoHeader">JOGAR</a>
             <a id="pgSobre" class="botaoHeader">SOBRE</a>
@@ -19,7 +19,11 @@
         </nav>
     </header>
     <section>
-        <table id="grade"></table>
+        <div id="divSudoku">
+            <table id="grade">
+                <!-- aqui vai a grade do sudoku -->
+            </table>
+        </div>
         <div id="divSobre" style="display: none;">
             <h1>O que é sudoku?</h1>
             <p>
@@ -65,13 +69,13 @@
             </p>
             <p>
                 Veja mais em: <a href="https://brasilescola.uol.com.br/curiosidades/sudoku.htm" target="_blank">
-                    https://brasilescola.uol.com.br/curiosidades/sudoku.htm </a>
+                    BRASIL ESCOLA</a>
             </p>
         </div>
         <div id="divQuemSou" style="display: none;">
 
             <div id="imgContainer">
-                <img id="hi" src="/hi.svg" alt="imagem contendo o nome Guilherme Costa">
+                <img id="hi" src="./hi.svg" alt="imagem contendo o nome Guilherme Costa">
             </div>
 
             <div id="socialMediaBtns">
@@ -150,10 +154,9 @@
             </div>
         
         </div>
-
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/script.js"></script>
+<script src="./script.js"></script>
 
 </html>
