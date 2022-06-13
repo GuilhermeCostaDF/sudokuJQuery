@@ -141,6 +141,11 @@ input{
     padding: 3px;
 }
 
+input[type="text"]:focus-within{
+    color: rgb(81, 156, 181);
+    outline: 0;
+}
+
 
 table{
     border: 2px solid black;
