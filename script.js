@@ -43,22 +43,34 @@ let sudoku = [
         ['4', '', '5', '', '1', '', '', '9', ''],
         ['3', '', '', '4', '', '6', '', '', '7']
     ],
+    // [
+    //     ['', '4', '6', '1', '5', '', '', '', '2'],
+    //     ['', '', '', '', '', '', '', '7', '5'],
+    //     ['5', '7', '', '2', '', '', '', '1', '6'],
+    //     ['3', '', '', '6', '7', '2', '8', '', ''],
+    //     ['4', '', '9', '8', '3', '', '5', '2', ''],
+    //     ['2', '', '', '5', '4', '', '1', '', ''],
+    //     ['', '', '2', '', '1', '5', '', '', ''],
+    //     ['8', '1', '', '7', '6', '', '', '4', ''],
+    //     ['', '', '4', '', '2', '', '6', '', '']
+    // ],
     [
-        ['', '4', '6', '1', '5', '', '', '', '2'],
-        ['', '', '', '', '', '', '', '7', '5'],
-        ['5', '7', '', '2', '', '', '', '1', '6'],
-        ['3', '', '', '6', '7', '2', '8', '', ''],
-        ['4', '', '9', '8', '3', '', '5', '2', ''],
-        ['2', '', '', '5', '4', '', '1', '', ''],
-        ['', '', '2', '', '1', '5', '', '', ''],
-        ['8', '1', '', '7', '6', '', '', '4', ''],
-        ['', '', '4', '', '2', '', '6', '', '']
+        ['9', '4', '6', '1', '5', '7', '3', '8', '2'],
+        ['1', '2', '8', '3', '9', '6', '4', '7', '5'],
+        ['5', '7', '3', '2', '8', '4', '9', '1', '6'],
+        ['3', '5', '1', '6', '7', '2', '8', '9', '4'],
+        ['4', '6', '9', '8', '3', '1', '5', '2', '7'],
+        ['2', '8', '7', '5', '4', '9', '1', '6', '3'],
+        ['6', '9', '2', '4', '1', '5', '7', '3', '8'],
+        ['8', '1', '5', '7', '6', '3', '2', '4', '9'],
+        ['', '', '4', '9', '2', '8', '6', '5', '1']
     ],
 
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
-const numeroSudoku = Math.floor(Math.random() * 5);
+// const numeroSudoku = Math.floor(Math.random() * 5);
+const numeroSudoku = 4;
 
 $('document').ready(
 
@@ -84,16 +96,15 @@ $('document').ready(
                     if (jogadaValida(sudoku[numeroSudoku], lin, col, valor)) {
                         sudoku[numeroSudoku][lin][col] = valor;
                         $(this).removeClass('jogadaInvalida') //Caso a primeiro jogada tenha sido "errada" remove o estilo
-                        console.log(sudoku[numeroSudoku])
-                    }
-                    else {
+                    }else {
                         $(this).addClass('jogadaInvalida');
                     }
 
+
                     if (jogoCompleto(sudoku[numeroSudoku])) {
-                        console.log('acabou');
-                    }
-                    else {
+                        console.log('acabou'); 
+                    }else {
+                        console.log(sudoku[numeroSudoku])
                         console.log('nao acabou')
                     }
 
@@ -103,7 +114,7 @@ $('document').ready(
 
             $('#grade').append(tr);
 
-            //evento criado para evitar um bugvisual no carregamento da tela 'jogar'
+            //evento criado para evitar um bug visual no carregamento da tela 'jogar'
             $('table').css({
                 'border': '2px solid black',
             })
@@ -132,17 +143,22 @@ $('document').ready(
         }
 
 
-
         function jogoCompleto(sudoku) {
+            let res = Boolean;
 
             for (let i = 0; i < 9; i++) {
                 //forEach percorre os arrays internos para verificar se ainda tem célula vazia
+
                 sudoku[i].forEach(element => {
-                    if (element == '') return false
-                    return true;
+                    if(element == '') {
+                        res = false;
+                    }
                 });
+
             }
+            return res;
         }
+
 
         //Laço para pintar bordas de celulas específicas
         for (let i = 0; i < 9; i++) {
