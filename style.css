@@ -148,6 +148,10 @@ input[type="text"]:focus-within{
     caret-color: transparent;
 }
 
+.jogadaInvalida{
+    color: #fa5246;
+}
+
 .borderRight{
     border-right: 2px solid black;
 }
