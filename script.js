@@ -43,11 +43,22 @@ let sudoku = [
         ['4', '', '5', '', '1', '', '', '9', ''],
         ['3', '', '', '4', '', '6', '', '', '7']
     ],
+    [
+        ['', '4', '6', '1', '5', '', '', '', '2'],
+        ['', '', '', '', '', '', '', '7', '5'],
+        ['5', '7', '', '2', '', '', '', '1', '6'],
+        ['3', '', '', '6', '7', '2', '8', '', ''],
+        ['4', '', '9', '8', '3', '', '5', '2', ''],
+        ['2', '', '', '5', '4', '', '1', '', ''],
+        ['', '', '2', '', '1', '5', '', '', ''],
+        ['8', '1', '', '7', '6', '', '', '4', ''],
+        ['', '', '4', '', '2', '', '6', '', '']
+    ],
 
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
-const numeroSudoku = Math.floor(Math.random() * 4);
+const numeroSudoku = Math.floor(Math.random() * 5);
 
 $('document').ready(
 
@@ -63,24 +74,28 @@ $('document').ready(
                 td.append(input);
                 tr.append(td);
 
-                input.on('input', function (e) {
+                input.on('change', function (e) {
                     // funcao é ativada quando detecta uma mudança na celula
                     let el = $(this);
                     let lin = el.attr('id')[1];
                     let col = el.attr('id')[2];
                     let valor = el.val();
 
-                    if(jogadaValida(sudoku, lin, col, valor)){
+                    if (jogadaValida(sudoku[numeroSudoku], lin, col, valor)) {
                         sudoku[numeroSudoku][lin][col] = valor;
-                        $(this).removeClass('jogadaInvalida')
+                        $(this).removeClass('jogadaInvalida') //Caso a primeiro jogada tenha sido "errada" remove o estilo
+                        console.log(sudoku[numeroSudoku])
                     }
-                    else{
-                        $(this).toggleClass('jogadaInvalida');
+                    else {
+                        $(this).addClass('jogadaInvalida');
                     }
 
-                    // if(jogoCompleto(sudoku)){
-                    //     funcao para "avisar" que o jogo terminou   
-                    // }
+                    if (jogoCompleto(sudoku[numeroSudoku])) {
+                        console.log('acabou');
+                    }
+                    else {
+                        console.log('nao acabou')
+                    }
 
                 })
 
@@ -94,16 +109,49 @@ $('document').ready(
             })
         }
 
+       
         function jogadaValida(sudoku, lin, col, valor) {
+            
+            if(valor <= 0 || valor > 9){
+                return false;
+            }
 
-            for(let i=0; i<9;i++){
-                for(let j=0; j<9; j++){
-                    if(sudoku[numeroSudoku][lin][j] == valor || sudoku[numeroSudoku][i][col] == valor){
-                        return false
+            else{
+                
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        if (sudoku[lin][j] == valor || sudoku[i][col] == valor )  {
+                            return false;
+                        }    
                     }
                 }
+
+                return true;
             }
-            return true;
+
+        }
+
+
+
+        function jogoCompleto(sudoku) {
+
+            for (let i = 0; i < 9; i++) {
+                //forEach percorre os arrays internos para verificar se ainda tem célula vazia
+                sudoku[i].forEach(element => {
+                    if (element == '') return false
+                    return true;
+                });
+            }
+        }
+
+        //Laço para pintar bordas de celulas específicas
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                $(`#c${i}2`).addClass('borderRight');
+                $(`#c${i}5`).addClass('borderRight');
+                $(`#c3${j}`).addClass('borderTop');
+                $(`#c6${j}`).addClass('borderTop');
+            }
         }
 
 
@@ -132,15 +180,6 @@ $('document').ready(
 
         })
 
-        //Laço para pintar bordas de celulas específicas
-        for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                $(`#c${i}2`).addClass('borderRight');
-                $(`#c${i}5`).addClass('borderRight');
-                $(`#c3${j}`).addClass('borderTop');
-                $(`#c6${j}`).addClass('borderTop');
-            }
-        }
     }
 
 )
