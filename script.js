@@ -24,7 +24,6 @@ $('document').ready(
                 td.append(input);
                 tr.append(td);
 
-
                 input.on('input', function(e){
                     // funcao é ativada quando detecta uma mudança na celula
                     let el = $(this);
@@ -48,13 +47,15 @@ $('document').ready(
             }
 
             $('#grade').append(tr);
+
+            $('table').css({
+                'border': '2px solid black',
+            })
         }
 
         // function jogadaValida(sudoku, lin, col, valor) {
         //     return boolian;
         // }
-
-
 
 
         // Funcao para "mudar" as páginas
@@ -82,6 +83,7 @@ $('document').ready(
 
         })
 
+        //Laço para pintar bordas de celulas específicas
         for(let i=0; i<9; i++){
             for(let j = 0; j<9; j++){
                 $(`#c${i}2`).addClass('borderRight');
@@ -91,5 +93,5 @@ $('document').ready(
             }
         }
     }
-
+    
 )

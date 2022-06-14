@@ -129,26 +129,23 @@ h3{
     justify-content: center;
 }
 
-
 input{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border: 1px solid rgb(222, 222, 222);
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     background-color: rgb(239, 239, 239);
     padding: 3px;
-}
-
-input[type="text"]:focus-within{
-    color: rgb(81, 156, 181);
     outline: 0;
 }
 
-
-table{
-    border: 2px solid black;
+input[type="text"]:focus-within{
+    background-color: #dbdbdb;
+    color: rgb(81, 156, 181);
+    outline: 0;
+    caret-color: transparent;
 }
 
 .borderRight{
