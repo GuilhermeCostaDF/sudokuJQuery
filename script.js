@@ -54,10 +54,23 @@ let sudoku = [
         ['8', '1', '', '7', '6', '', '', '4', ''],
         ['', '', '4', '', '2', '', '6', '', '']
     ],
+    //grade para testes rápidos
+    // [
+    //     ['9', '2', '6', '3', '5', '4', '7', '8', '1'],
+    //     ['8', '5', '1', '7', '6', '2', '4', '3', '9'],
+    //     ['4', '7', '3', '8', '1', '9', '5', '2', '6'],
+    //     ['3', '4', '2', '6', '7', '8', '1', '9', '5'],
+    //     ['3', '4', '2', '6', '7', '8', '1', '9', '7'],
+    //     ['1', '9', '7', '2', '4', '5', '8', '6', '3'],
+    //     ['6', '8', '5', '4', '9', '7', '3', '1', '2'],
+    //     ['', '3', '4', '1', '2', '6', '9', '5', '8'],
+    //     ['2', '1', '9', '5', '8', '3', '6', '7', '']
+    // ],
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
 const numeroSudoku = Math.floor(Math.random() * 5);
+
 
 $('document').ready(
 
@@ -88,13 +101,13 @@ $('document').ready(
                     }
 
                     if(jogoCompleto(sudoku[numeroSudoku])) {
-                        alert('BOOOOOA CAMPEAO')
+                        
                         $('#modalFimDoJogo').css({
                             'z-index': '0',
                         })
 
                         $('#my-canvas').css({
-                            'visibility': 'visible',
+                            'visibility': 'visible'
                         })
 
                         $('body').css({
@@ -197,14 +210,16 @@ $('document').ready(
             $('#my-canvas').css({
                 'visibility': 'hidden',
             })
+
+            $('body').css({
+                'overflow': 'auto',
+            })
         })
 
         //script de animação dos confetes
         var confettiSettings = { target: 'my-canvas' };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
-
-        
         
     }
 
