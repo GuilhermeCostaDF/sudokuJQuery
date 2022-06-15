@@ -89,6 +89,9 @@ $('document').ready(
 
                     if(jogoCompleto(sudoku[numeroSudoku])) {
                         alert('BOOOOOA CAMPEAO')
+                        $('#modalFimDoJogo').css({
+                            'z-index': '0',
+                        })
                     }
 
                 })
@@ -174,6 +177,13 @@ $('document').ready(
                     return;
             }
 
+        })
+
+        //evento para fechar o modal caso o jogador deseje 
+        $('#fecharModal').on('click', function(){
+            $('#modalFimDoJogo').css({
+                'z-index': '-1',
+            })
         })
 
     }
