@@ -92,6 +92,15 @@ $('document').ready(
                         $('#modalFimDoJogo').css({
                             'z-index': '0',
                         })
+
+                        $('#my-canvas').css({
+                            'visibility': 'visible',
+                        })
+
+                        $('body').css({
+                            'overflow': 'hidden',
+                        })
+
                     }
 
                 })
@@ -184,8 +193,19 @@ $('document').ready(
             $('#modalFimDoJogo').css({
                 'z-index': '-1',
             })
+
+            $('#my-canvas').css({
+                'visibility': 'hidden',
+            })
         })
 
+        //script de animação dos confetes
+        var confettiSettings = { target: 'my-canvas' };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        
+        
     }
 
 )

@@ -203,3 +203,20 @@ input[type="text"]:focus-within{
     border-top: 2px solid black;
 }
 
+#my-canvas{
+    background-color: transparent;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    z-index: 10000;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+section{
+    
+    overflow: hidden;
+}
+
