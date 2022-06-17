@@ -221,3 +221,20 @@ section{
     overflow: hidden;
 }
 
+
+@media screen  and (max-width: 465px) {
+
+    img#logo{
+        display: none;
+    }
+
+    section{
+        width: 110%;
+    }
+
+    #divSudoku{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

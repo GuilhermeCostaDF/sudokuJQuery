@@ -87,7 +87,7 @@ $('document').ready(
                 tr.append(td);
 
                 input.on('change', function (e) {
-                    // funcao é ativada quando detecta uma mudança na celula
+                    
                     let el = $(this);
                     let lin = el.attr('id')[1];
                     let col = el.attr('id')[2];
