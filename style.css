@@ -228,7 +228,6 @@ section{
     }
 }
 
-
 @media screen and (max-width: 570px){
     img#logo{
         display:none;
@@ -271,4 +270,5 @@ section{
     .techBtns{
         max-width: 30%;
     } 
+
 }
