@@ -258,6 +258,10 @@ section{
         max-width: 40%;
     }
 
+    #socialMediaBtns{
+        width: 100%;
+    }
+
     .techBtns{
         max-width: 30%;
     } 
