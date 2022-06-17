@@ -85,9 +85,11 @@ $('document').ready(
                 let td = $(`<td>`); //criando as colunas da tabela
                 td.append(input);
                 tr.append(td);
-
+                
+                $('#grade').append(tr);
+                
                 input.on('change', function (e) {
-                    
+
                     let el = $(this);
                     let lin = el.attr('id')[1];
                     let col = el.attr('id')[2];
@@ -120,7 +122,6 @@ $('document').ready(
 
             }
 
-            $('#grade').append(tr);
 
             //evento criado para evitar um bug visual no carregamento da tela 'jogar'
             $('table').css({

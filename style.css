@@ -223,16 +223,22 @@ section{
 
 @media screen and (max-width: 680px) {
     #socialMediaBtns{
-        right: -35px;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    #socialMediaBtns{
         right: 0px;
+        justify-content: center;
     }
 }
 
+
+@media screen and (max-width: 570px){
+    img#logo{
+        display:none;
+    }
+
+    nav{
+        justify-content: center;
+    }
+
+}
 
 @media screen  and (max-width: 465px) {
 
