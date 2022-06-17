@@ -184,11 +184,26 @@ $('document').ready(
                     $('#divSobre')[0].style = "display: block;"
                     $('#divQuemSou')[0].style = "display: none;"
                     $('#divSudoku')[0].style = "display: none;"
+                    //cancelar animação caso o jogo tenha sido finalizado
+                    $('#my-canvas').css({
+                        'visibility': 'hidden',
+                    })
+        
+                    $('body').css({
+                        'overflow': 'auto',
+                    })
                     break;
                 case 'pgQuemSou':
                     $('#divQuemSou')[0].style = "display: block;"
                     $('#divSobre')[0].style = "display: none;"
                     $('#divSudoku')[0].style = "display: none;"
+                    //cancelar animação caso o jogo tenha sido finalizado
+                    $('#my-canvas').css({
+                        'visibility': 'hidden',
+                    })
+                    $('body').css({
+                        'overflow': 'auto',
+                    })
                     break;
                 case 'pgJogar':
                     $('#divSudoku')[0].style = "display: flex;"
