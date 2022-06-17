@@ -221,6 +221,18 @@ section{
     overflow: hidden;
 }
 
+@media screen and (max-width: 680px) {
+    #socialMediaBtns{
+        right: -35px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #socialMediaBtns{
+        right: 0px;
+    }
+}
+
 
 @media screen  and (max-width: 465px) {
 
@@ -237,4 +249,16 @@ section{
         justify-content: center;
         align-items: center;
     }
+
+    #socialMediaBtns{
+        right: 0px;
+    }
+
+    .btnMedia{
+        max-width: 40%;
+    }
+
+    .techBtns{
+        max-width: 30%;
+    } 
 }
