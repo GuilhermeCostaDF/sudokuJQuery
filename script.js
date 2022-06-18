@@ -115,9 +115,11 @@ $('document').ready(
                             'visibility': 'visible'
                         })
 
-                        $('body').css({
-                            'overflow': 'hidden',
-                        })
+                        if ($(window).width() > 405 ){
+                            $('body').css({
+                                'overflow': 'hidden',
+                            })
+                        }
 
                     }
 
