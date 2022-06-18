@@ -245,6 +245,11 @@ section{
         display: none;
     }
 
+    header{
+        width: 110%;
+    }
+
+
     section{
         width: 110%;
     }
@@ -271,4 +276,71 @@ section{
         max-width: 30%;
     } 
 
+}
+
+@media screen and (max-width: 458px) {
+
+    header{
+        width: 120%;
+    }
+
+    section{
+        width: 120%;
+    }
+
+    #modalFimDoJogo{
+        height: 80vh;
+        width: 200%;
+    }
+
+    #modalFimDoJogo button{
+        top: -260px;
+    }
+}
+
+@media screen and (max-width: 405px) {
+
+    header{
+        width: 120%;
+    }
+
+    section{
+        width: 120%;
+    }
+
+    #modalFimDoJogo{
+        height: 80vh;
+        width: 200%;
+    }
+
+    #modalFimDoJogo button{
+        top: -260px;
+        left: 325px;
+    }
+}
+
+@media screen  and (max-width: 360px) {
+
+    nav{
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #divSudoku{
+        width: 80%;
+        position: absolute;
+        left: 25px;
+    }
+
+    input{
+        width: 30px;
+        height: 30px;
+    }
+
+    #modalFimDoJogo {
+        display: none;
+    }
 }
