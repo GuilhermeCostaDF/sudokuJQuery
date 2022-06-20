@@ -71,8 +71,6 @@ let sudoku = [
 //Gera um número aleatório de 0 a 4 para a escolha da grade
 const numeroSudoku = Math.floor(Math.random() * 5);
 
-
-
 $('document').ready(
 
     function () {
@@ -99,10 +97,9 @@ $('document').ready(
                     if (jogadaValida(sudoku[numeroSudoku], lin, col, valor)) {
                         sudoku[numeroSudoku][lin][col] = valor;
                         $(this).removeClass('jogadaInvalida') //Caso a primeiro jogada tenha sido "errada" remove o estilo
-                        // console.log(sudoku[numeroSudoku])
+                        
                     }else {
                         $(this).addClass('jogadaInvalida');
-                        // console.log(sudoku[numeroSudoku])
                     }
 
                     if(jogoCompleto(sudoku[numeroSudoku])) {
@@ -125,7 +122,6 @@ $('document').ready(
                 })
 
             }
-
 
             //evento criado para evitar um bug visual no carregamento da tela 'jogar'
             $('table').css({

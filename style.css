@@ -281,11 +281,11 @@ section{
 @media screen and (max-width: 458px) {
 
     header{
-        width: 120%;
+        width: 100%;
     }
 
     section{
-        width: 120%;
+        width: 100%;
     }
 
     #modalFimDoJogo{
@@ -300,12 +300,17 @@ section{
 
 @media screen and (max-width: 405px) {
 
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
     header{
-        width: 120%;
+        width: 100%;
     }
 
     section{
-        width: 120%;
+        width: 100%;
     }
 
     #modalFimDoJogo{
