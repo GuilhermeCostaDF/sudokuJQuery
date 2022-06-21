@@ -183,8 +183,12 @@ $('document').ready(
             location.reload();
         })
 
-        
-
+        //Botao para reiniciar o jogo atual
+        $('#btnReiniciar').on('click', function(){ 
+            $('td').remove();
+            sudoku = [];
+            iniciar();
+        })
 
         //Laço para pintar bordas de celulas específicas
         for (let i = 0; i < 9; i++) {
@@ -257,11 +261,7 @@ $('document').ready(
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
         
-        $('#btnReiniciar').on('click', function(){ 
-            $('td').remove();
-            sudoku = [];
-            iniciar();
-        })
+        
     }
 
 )
