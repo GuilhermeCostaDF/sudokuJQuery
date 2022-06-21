@@ -180,7 +180,10 @@ $('document').ready(
 
         //Botão para iniciar um novo jogo
         $('#btnNovoJogo').on('click', function(){
-            location.reload();
+            $('td').remove();
+            sudoku = [];
+            numeroSudoku = Math.floor(Math.random() * 5);
+            iniciar();  
         })
 
         //Botao para reiniciar o jogo atual
