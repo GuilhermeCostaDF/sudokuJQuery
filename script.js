@@ -69,8 +69,7 @@ let sudoku = [
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
-// const numeroSudoku = Math.floor(Math.random() * 5);
-const numeroSudoku = 2;
+const numeroSudoku = Math.floor(Math.random() * 5);
 
 $('document').ready(
 
@@ -157,9 +156,6 @@ $('document').ready(
                         }
                     }
                 }
-
-                console.log(lin1);
-                console.log(col1);
 
                 return true;
             }
