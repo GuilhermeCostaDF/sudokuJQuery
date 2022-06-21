@@ -69,12 +69,12 @@ let sudoku = [
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
-const numeroSudoku = Math.floor(Math.random() * 5);
+var numeroSudoku = Math.floor(Math.random() * 5);
 
 $('document').ready(
-
-    function () {
-
+    
+    function iniciar() {
+        
         //Criando a tabela do jogo
         for (let i = 0; i < 9; i++) {
 
@@ -178,6 +178,13 @@ $('document').ready(
             return res;
         }
 
+        //Botão para iniciar um novo jogo
+        $('#btnNovoJogo').on('click', function(){
+            location.reload();
+        })
+
+        
+
 
         //Laço para pintar bordas de celulas específicas
         for (let i = 0; i < 9; i++) {
@@ -249,7 +256,11 @@ $('document').ready(
         var confettiSettings = { target: 'my-canvas' };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
-
+        
+        // $('#btnReiniciar').on('click', function(numeroSudoku){
+        //     var numeroSudoku = numeroSudoku; 
+        //     location.reload();     
+        // })
     }
 
 )
