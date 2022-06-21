@@ -84,7 +84,7 @@ $('document').ready(
                 let td = $(`<td>`); //criando as colunas da tabela
                 td.append(input);
                 tr.append(td);
-                
+
                 $('#grade').append(tr);
 
                 input.on('change', function (e) {
@@ -97,13 +97,13 @@ $('document').ready(
                     if (jogadaValida(sudoku[numeroSudoku], lin, col, valor)) {
                         sudoku[numeroSudoku][lin][col] = valor;
                         $(this).removeClass('jogadaInvalida') //Caso a primeiro jogada tenha sido "errada" remove o estilo
-                        
-                    }else {
+
+                    } else {
                         $(this).addClass('jogadaInvalida');
                     }
 
-                    if(jogoCompleto(sudoku[numeroSudoku])) {
-                        
+                    if (jogoCompleto(sudoku[numeroSudoku])) {
+
                         $('#modalFimDoJogo').css({
                             'z-index': '0',
                         })
@@ -112,7 +112,7 @@ $('document').ready(
                             'visibility': 'visible'
                         })
 
-                        if ($(window).width() > 410 ){
+                        if ($(window).width() > 410) {
                             $('body').css({
                                 'overflow': 'hidden',
                             })
@@ -130,17 +130,49 @@ $('document').ready(
         }
 
         function jogadaValida(sudoku, lin, col, valor) {
-            
-            if(valor <= 0 || valor > 9 || isNaN(valor)){
+
+            if (valor <= 0 || valor > 9 || isNaN(valor)) {
                 return false;
             }
 
-            else{
+            else {
                 for (let i = 0; i < 9; i++) {
                     for (let j = 0; j < 9; j++) {
-                        if (sudoku[lin][j] == valor || sudoku[i][col] == valor )  {
+                        if (sudoku[lin][j] == valor || sudoku[i][col] == valor) {
                             return false;
-                        }    
+                        }
+                    }
+                }
+
+                //verificação das grades 3x3 menores
+
+                if (lin == 0 || lin == 3 || lin == 6 && col == 0 || col == 3 || col == 6) {
+                    for (let i = lin; i < lin + 2; i++) {
+                        for (let j = col; j < col + 2; j++) {
+                            if (sudoku[i][j] == valor) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+
+                else if (lin == 0 || lin == 3 || lin == 6 && col == 1 || col == 4 || col == 7) {
+                    for (let i = lin; i < lin + 2; i++) {
+                        for (let j = col - 1; j < col + 2; j++) {
+                            if (sudoku[i][j] == valor) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+
+                else if (lin == 0 || lin == 3 || lin == 6 && col == 2 || col == 5 || col == 8) {
+                    for (let i = lin; i < lin + 2; i++) {
+                        for (let j = col - 2; j < col + 2; j++) {
+                            if (sudoku[i][j] == valor) {
+                                return false;
+                            }
+                        }
                     }
                 }
 
@@ -156,7 +188,7 @@ $('document').ready(
                 //forEach percorre os arrays internos para verificar se ainda tem célula vazia
 
                 sudoku[i].forEach(element => {
-                    if(element == '') {
+                    if (element == '') {
                         res = false;
                     }
                 });
@@ -189,7 +221,7 @@ $('document').ready(
                     $('#my-canvas').css({
                         'visibility': 'hidden',
                     })
-        
+
                     $('body').css({
                         'overflow': 'auto',
                     })
@@ -218,7 +250,7 @@ $('document').ready(
         })
 
         //evento para fechar o modal caso o jogador deseje 
-        $('#fecharModal').on('click', function(){
+        $('#fecharModal').on('click', function () {
             $('#modalFimDoJogo').css({
                 'z-index': '-1',
             })
@@ -236,7 +268,7 @@ $('document').ready(
         var confettiSettings = { target: 'my-canvas' };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
-        
+
     }
 
 )
