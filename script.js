@@ -69,7 +69,8 @@ let sudoku = [
 ];
 
 //Gera um número aleatório de 0 a 4 para a escolha da grade
-const numeroSudoku = Math.floor(Math.random() * 5);
+// const numeroSudoku = Math.floor(Math.random() * 5);
+const numeroSudoku = 2;
 
 $('document').ready(
 
@@ -146,35 +147,19 @@ $('document').ready(
 
                 //verificação das grades 3x3 menores
 
-                if (lin == 0 || lin == 3 || lin == 6 && col == 0 || col == 3 || col == 6) {
-                    for (let i = lin; i < lin + 2; i++) {
-                        for (let j = col; j < col + 2; j++) {
-                            if (sudoku[i][j] == valor) {
-                                return false;
-                            }
+                let lin1 = Math.floor(lin/3)*3;
+                let col1 = Math.floor(col/3) *3;
+
+                for( let i = lin1; i< lin1+3; i++){
+                    for(let j = col1; j< col1+3; j++){
+                        if(sudoku[i][j] == valor) {
+                            return false;
                         }
                     }
                 }
 
-                else if (lin == 0 || lin == 3 || lin == 6 && col == 1 || col == 4 || col == 7) {
-                    for (let i = lin; i < lin + 2; i++) {
-                        for (let j = col - 1; j < col + 2; j++) {
-                            if (sudoku[i][j] == valor) {
-                                return false;
-                            }
-                        }
-                    }
-                }
-
-                else if (lin == 0 || lin == 3 || lin == 6 && col == 2 || col == 5 || col == 8) {
-                    for (let i = lin; i < lin + 2; i++) {
-                        for (let j = col - 2; j < col + 2; j++) {
-                            if (sudoku[i][j] == valor) {
-                                return false;
-                            }
-                        }
-                    }
-                }
+                console.log(lin1);
+                console.log(col1);
 
                 return true;
             }
